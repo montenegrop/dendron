@@ -1,9 +1,9 @@
 ---
-id: w0y9uj0v1cdoqls2hodt13e
-title: Django Cache
+id: 3s98e4puzqykcn7110z26iy
+title: Optimize
 desc: ''
-updated: 1649809921942
-created: 1649809921942
+updated: 1650623998093
+created: 1650623998093
 ---
 
 # Introduccion

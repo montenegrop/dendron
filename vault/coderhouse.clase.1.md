@@ -2,13 +2,13 @@
 id: pxpp562phot5hu26t0s49wi
 title: '1'
 desc: ''
-updated: 1650623905625
+updated: 1651336031805
 created: 1650454368360
 ---
 
 # entregables
 hay varios tipos, hay top 10, hay clases extras cada dos semanas creo, los viernes
-
+    
 # proyecto final
 es solo backend
 

@@ -1,0 +1,1 @@
+const escribirArchivo = require('./escribirArchivo')

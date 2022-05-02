@@ -1,0 +1,1 @@
+{"nombre":"pablo","apellido":"montenegro","libros":[{"nombre":"Fitzgerald","autor":"Gatsby"},{"nombre":"salinger","autor":"For Esme"}],"mascotas":["perro","gato","pajaro","tortuga"]}

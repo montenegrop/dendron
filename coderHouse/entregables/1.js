@@ -58,4 +58,18 @@ console.log(
     usuarioLector.getBookNames()
 )
 
-module.exports = usuarioLector
+usuarioLector1 = new Usuario(
+    'pablo1',
+    'montenegro1',
+    [{ nombre: 'Fitzgerald1', autor: 'Gatsby1' }],
+    ['perro1', 'gato1', 'pajaro1']
+)
+
+usuarioLector2 = new Usuario(
+    'pablo2',
+    'montenegro2',
+    [{ nombre: 'Fitzgerald2', autor: 'Gatsby2' }],
+    ['perro2', 'gato2', 'pajaro2']
+)
+
+module.exports = { usuarioLector1, usuarioLector2 }

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { usuarioLector1, usuarioLector2 } = require('./1')
 
-var numero = 1
+var numero = 2
 const indentado = ' '
 
 function serialize(object) {
@@ -24,13 +24,14 @@ class Contenedor {
         this.filename = filename
         this.totalObjects = 0
     }
-    async save(objeto) {
+    save(objeto) {
         const objetosArray = getFileObjects(this.filename)
-        console.log(objetosArray)
+        objeto.id = this.totalObjects + 1
         objetosArray.push(objeto)
 
         try {
             fs.writeFileSync(this.filename, serialize(objetosArray))
+            this.totalObjects = this.totalObjects + 1
         } catch (error) {}
     }
 }

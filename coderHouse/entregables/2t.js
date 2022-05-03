@@ -1,70 +1,43 @@
 const fs = require('fs')
 const { usuarioLector1, usuarioLector2 } = require('./1')
 
+var numero = 1
+const indentado = ' '
+
 function serialize(object) {
-    return JSON.stringify(object)
+    return JSON.stringify(object, null, indentado)
 }
 
-// function checkEmptyFile(filename) {}
+function getFileObjects(filename) {
+    try {
+        const fileContent = fs.readFileSync(filename, 'utf-8')
+        return JSON.parse(fileContent)
+    } catch (error) {
+        //Posibles errroes: archivo no existe, está vacio o no es JSON valido
+        fs.writeFileSync(filename, '[]', 'utf-8')
+        return []
+    }
+}
 
 class Contenedor {
     constructor(filename) {
         this.filename = filename
         this.totalObjects = 0
     }
-    save(objeto) {
-        const methodName = 'save'
-        let array = []
-        console.log(this.totalObjects, '0')
-        if (true) {
-            console.log(this.filename)
-            fs.readFile(
-                this.filename,
-                { encoding: 'utf-8' },
-                (error, contenido) => {
-                    if (error) {
-                        console.log(methodName + 'readfile error')
-                    } else {
-                        array = contenido
-                    }
-                }
-            )
-        }
+    async save(objeto) {
+        const objetosArray = getFileObjects(this.filename)
+        console.log(objetosArray)
+        objetosArray.push(objeto)
 
         try {
-            fs.appendFile(this.filename, serialize(objeto) + '\n', (error) => {
-                if (error) {
-                    console.log('error de ' + methodName, error)
-                } else {
-                    console.log('exito de ' + methodName)
-                    this.totalObjects = this.totalObjects + 1
-                    console.log(this.totalObjects)
-                    return this.totalObjects
-                }
-            })
-        } catch (error) {
-            console.log('error al llamar al metodo ' + methodName, error)
-        }
+            fs.writeFileSync(this.filename, serialize(objetosArray))
+        } catch (error) {}
     }
 }
 
 // const objeto = objetoImportado
-const archivo = './2.prueba.txt'
-const elemento1 = [
-    'pablo1',
-    'montenegro1',
-    [{ nombre: 'Fitzgerald1', autor: 'Gatsby1' }],
-    ['perro1', 'gato1', 'pajaro1'],
-]
-const elemento2 = [
-    'pablo1',
-    'montenegro1',
-    [{ nombre: 'Fitzgerald1', autor: 'Gatsby1' }],
-    ['perro1', 'gato1', 'pajaro1'],
-]
-
+const archivo = './coderhouse/entregables/file' + numero.toString() + '.json'
 cont1 = new Contenedor(archivo)
-cont1.save(elemento1)
-cont1.save(elemento2)
-
+cont1.save(usuarioLector1)
+cont1.save(usuarioLector2)
 // puede pasar que elemento2 y elemento1 se mezclen al escribirse en el archivo?

@@ -1,1 +1,6 @@
-{"nombre":"pablo","apellido":"montenegro","libros":[{"nombre":"Fitzgerald","autor":"Gatsby"},{"nombre":"salinger","autor":"For Esme"}],"mascotas":["perro","gato","pajaro","tortuga"]}
+{"nombre":"pablo1","apellido":"montenegro1","libros":[{"nombre":"Fitzgerald1","autor":"Gatsby1"}],"mascotas":["perro1","gato1","pajaro1"]}
+{"nombre":"pablo2","apellido":"montenegro2","libros":[{"nombre":"Fitzgerald2","autor":"Gatsby2"}],"mascotas":["perro2","gato2","pajaro2"]}
+["pablo1","montenegro1",[{"nombre":"Fitzgerald1","autor":"Gatsby1"}],["perro1","gato1","pajaro1"]]
+["pablo1","montenegro1",[{"nombre":"Fitzgerald1","autor":"Gatsby1"}],["perro1","gato1","pajaro1"]]
+["pablo1","montenegro1",[{"nombre":"Fitzgerald1","autor":"Gatsby1"}],["perro1","gato1","pajaro1"]]
+["pablo1","montenegro1",[{"nombre":"Fitzgerald1","autor":"Gatsby1"}],["perro1","gato1","pajaro1"]]

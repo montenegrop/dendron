@@ -14,6 +14,23 @@ class Contenedor {
     }
     save(objeto) {
         const methodName = 'save'
+        let array = []
+        console.log(this.totalObjects, '0')
+        if (true) {
+            console.log(this.filename)
+            fs.readFile(
+                this.filename,
+                { encoding: 'utf-8' },
+                (error, contenido) => {
+                    if (error) {
+                        console.log(methodName + 'readfile error')
+                    } else {
+                        array = contenido
+                    }
+                }
+            )
+        }
+
         try {
             fs.appendFile(this.filename, serialize(objeto) + '\n', (error) => {
                 if (error) {

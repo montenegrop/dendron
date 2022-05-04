@@ -1,0 +1,66 @@
+[
+ {
+  "nombre": "pablo1",
+  "apellido": "montenegro1",
+  "libros": [
+   {
+    "nombre": "Fitzgerald1",
+    "autor": "Gatsby1"
+   }
+  ],
+  "mascotas": [
+   "perro1",
+   "gato1",
+   "pajaro1"
+  ],
+  "id": null
+ },
+ {
+  "nombre": "pablo2",
+  "apellido": "montenegro2",
+  "libros": [
+   {
+    "nombre": "Fitzgerald2",
+    "autor": "Gatsby2"
+   }
+  ],
+  "mascotas": [
+   "perro2",
+   "gato2",
+   "pajaro2"
+  ],
+  "id": null
+ },
+ {
+  "nombre": "pablo2",
+  "apellido": "montenegro2",
+  "libros": [
+   {
+    "nombre": "Fitzgerald2",
+    "autor": "Gatsby2"
+   }
+  ],
+  "mascotas": [
+   "perro2",
+   "gato2",
+   "pajaro2"
+  ],
+  "id": null
+ },
+ {
+  "nombre": "pablo2",
+  "apellido": "montenegro2",
+  "libros": [
+   {
+    "nombre": "Fitzgerald2",
+    "autor": "Gatsby2"
+   }
+  ],
+  "mascotas": [
+   "perro2",
+   "gato2",
+   "pajaro2"
+  ],
+  "id": null
+ }
+]

@@ -1,0 +1,38 @@
+{
+    "name": "usespicesbackend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+      "test": "NODE_NO_WARNINGS=1 node --experimental-vm-modules ./node_modules/.bin/jest",
+      "prettier-format": "prettier --config .prettierrc 'src/**/*.{js,ts}' --write",
+      "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}'"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Vyper-v/useSpicesBackend.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Vyper-v/useSpicesBackend/issues"
+    },
+    "homepage": "https://github.com/Vyper-v/useSpicesBackend#readme",
+    "devDependencies": {
+      "@faker-js/faker": "^6.2.0",
+      "eslint": "^8.14.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-config-standard": "^17.0.0",
+      "eslint-plugin-import": "^2.26.0",
+      "eslint-plugin-jest": "^26.1.5",
+      "eslint-plugin-n": "^15.2.0",
+      "eslint-plugin-promise": "^6.0.0",
+      "jest": "^27.5.1",
+      "prettier": "^2.6.2"
+    },
+    "dependencies": {
+      "express": "^4.18.1"
+    }
+  }

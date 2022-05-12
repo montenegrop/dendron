@@ -20,4 +20,8 @@ convertir en ruta absultuta
 1. es una funcion en el medio entre el req y resp, hablando de express
 2.  
 
+# multier
+
+1. subir muchos archivos
+2. UNIX time para identificar
 

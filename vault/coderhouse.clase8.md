@@ -2,7 +2,7 @@
 id: 7mbwv87ieanprwfr3t9weeg
 title: Clase8
 desc: ''
-updated: 1652315644917
+updated: 1652576316815
 created: 1652314064605
 ---
 
@@ -25,3 +25,12 @@ convertir en ruta absultuta
 1. subir muchos archivos
 2. UNIX time para identificar
 
+////``
+
+{}
+
+[]
+
+[{}]
+
+/

@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'fs'
 
 // convierte a Json
 const indentado = ' '
@@ -67,31 +67,4 @@ class Contenedor {
     }
 }
 
-//data pruebas:
-const archivo = './productos.txt'
-const objeto1 = {
-    title: 'titulo1',
-    price: 10,
-    thumbnail: 'www.thum1.com',
-}
-const objeto2 = {
-    title: 'titulo2',
-    price: 20,
-    thumbnail: 'www.thum2.com',
-}
-const objeto3 = {
-    title: 'titulo3',
-    price: 30,
-    thumbnail: 'www.thum3.com',
-}
-// llamados prueba:
-const cont = new Contenedor(archivo)
-cont.save(objeto1)
-cont.save(objeto2)
-cont.save(objeto3)
-console.log('object of id 2:', cont.getById(2))
-cont.getAll()
-cont.deleteById(1)
-console.log('all objects menos el de id 1', cont.getAll())
-cont.save(objeto2)
-// cont.deleteAll()
+export default Contenedor

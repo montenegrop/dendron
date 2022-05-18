@@ -2,7 +2,7 @@
 id: 8cq143l50vqhjh7aj0wogiu
 title: '18'
 desc: ''
-updated: 1652845605499
+updated: 1652845759247
 created: 1652845605499
 traitIds:
   - meetingNote
@@ -12,7 +12,7 @@ _Edit the [[dendron.templates.meet]] to change this template generated for Dendr
 ## Attendees
 <!-- Meeting attendees. If you prefix users with an '@', you can then optionally click Ctrl+Enter to create a note for that user. -->
 
-- @JohnDoe
+- @Facundo
 
 ## Goals
 <!-- Main objectives of the meeting -->

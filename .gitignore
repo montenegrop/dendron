@@ -1,7 +1,5 @@
 .dendron.cache.json
-.dendron.port
-.dendron.ws
 **/node_modules
 typescript/package-lock.json
-.dendron.port
-.dendron.ws
+*dendron.port
+*dendron.ws

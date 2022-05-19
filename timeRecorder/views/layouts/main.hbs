@@ -25,7 +25,7 @@ function terminar(e) {
     <h1 style="color: rgb(179, 213, 11);">En pausa</h1> 
 {{/if}}
 
-<h2> trabajado hoy: {{totalTiempo}} segundos</h2>
+<h2> trabajado sesion: {{totalTiempo}} segundos</h2>
 
   {{!-- <h2>trabajado: {{ ahora }} HH:MM:SS</h2> --}}
 
@@ -50,5 +50,8 @@ function terminar(e) {
   <button {{#unless terminable}} disabled {{/unless}} onclick="terminar()">
   Terminar
   </button>
+
+<h3> total acumulado : {{valueHistorico}} segundos</h3>
+
 
 {{!-- {{> footer}} --}}

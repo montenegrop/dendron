@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express'
 const app = express()
 
@@ -21,6 +22,8 @@ app.engine('hbs', engienFn)
 app.set('views', './views')
 app.set('view engine', 'hbs')
 
+// dotenv:
+
 // variables:
 var trabajando = false
 var pausado = false
@@ -39,7 +42,7 @@ await client.connect()
 
 var key = 'noEmpezado'
 var value = 'iniciadoNoTerminado'
-const keyHistorico = 'xdSecsT'
+const keyHistorico = 'casSecsT'
 var valueHistorico = (await client.get(keyHistorico)) || 0
 
 // await client.set('key2', 'value3')
@@ -49,7 +52,7 @@ app.get('/iniciable/casino', async (req, res) => {
     empezable = true
     trabajando = false
 
-    var valueHistorico = (await client.get(keyHistorico)) || 0
+    valueHistorico = (await client.get(keyHistorico)) || 0
 
     const data = {
         trabajando,
@@ -58,6 +61,7 @@ app.get('/iniciable/casino', async (req, res) => {
         terminable,
         empezable,
         totalTiempo,
+        valueHistorico,
     }
     return res.render('layouts/main', data)
 })
@@ -70,7 +74,7 @@ app.get('/empezar', async (req, res) => {
     diferenciaTiempo = 0
     totalTiempo = 0
     inicialMoment = moment()
-    key = 'xdSecs:' + inicialMoment.format('DD_MM_YYYY')
+    key = 'casSecsT:' + inicialMoment.format('DD_MM_YYYY')
 
     let i = 0
     let exists = true
@@ -82,7 +86,6 @@ app.get('/empezar', async (req, res) => {
         i = i + 1
     }
     key = key + '-' + i.toString()
-    console.log(key)
 
     await client.set(key, value)
 
@@ -93,6 +96,7 @@ app.get('/empezar', async (req, res) => {
         terminable,
         empezable,
         totalTiempo,
+        valueHistorico,
     }
     return res.render('layouts/main', data)
 })
@@ -114,6 +118,7 @@ app.get('/pausar', (req, res) => {
         terminable,
         empezable,
         totalTiempo,
+        valueHistorico,
     }
     return res.render('layouts/main', data)
 })
@@ -130,6 +135,7 @@ app.get('/continuar', (req, res) => {
         terminable,
         empezable,
         totalTiempo,
+        valueHistorico,
     }
     return res.render('layouts/main', data)
 })
@@ -141,10 +147,11 @@ app.get('/terminar', async (req, res) => {
     terminable = false
     empezable = false
 
-    console.log(totalTiempo)
     await client.set(key, totalTiempo)
-    valueHistorico = client.set(keyHistorico, valueHistorico)
-    console.log(valueHistorico)
+    await client.set(
+        keyHistorico,
+        (Number(valueHistorico) + Number(totalTiempo)).toString()
+    )
 
     const data = {
         trabajando,
@@ -153,12 +160,15 @@ app.get('/terminar', async (req, res) => {
         terminable,
         empezable,
         totalTiempo,
+        valueHistorico,
     }
     return res.render('layouts/main', data)
 })
 
 const server = app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`)
+    console.log(`Servidor casinoTime en el puerto ${PORT}`)
 })
 
-server.on('error', (error) => console.log(`Error en servidor: ${error}`))
+server.on('error', (error) =>
+    console.log(`Error en servidor casinoTime: ${error}`)
+)

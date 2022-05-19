@@ -1,0 +1,52 @@
+<head>
+  <link rel="shortcut icon" href="#">
+</head>
+
+<script>   
+function empezar(e) {   
+  window.location.href = '/empezar';
+}   
+function pausar(e) {   
+  window.location.href = '/pausar';
+}  
+function continuar(e) {   
+  window.location.href = '/continuar';
+}  
+function terminar(e) {   
+  window.location.href = '/terminar';
+}  
+</script> 
+
+{{> header}}
+
+{{#if trabajando}}
+    <h1 style="color: rgb(11, 11, 213);">Trabajando</h1> 
+{{else}}
+    <h1 style="color: rgb(179, 213, 11);">En pausa</h1> 
+{{/if}}
+
+  {{!-- <h2>trabajado: {{ ahora }} HH:MM:SS</h2> --}}
+
+  <button {{#if pausado}} disabled {{else if empezado}} disabled {{/if}} onclick="empezar()">
+  Empezar
+  </button>
+
+  {{#if trabajando}}
+
+  <button onclick="pausar()">
+  Pausar
+  </button>
+
+{{else}}
+
+  <button onclick="continuar()">
+  Continuar
+  </button>
+
+{{/if}}
+
+  <button {{#if trabajando}} disabled {{/if}} onclick="terminar()">
+  Terminar
+  </button>
+
+{{!-- {{> footer}} --}}

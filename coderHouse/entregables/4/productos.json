@@ -1,0 +1,20 @@
+[
+    {
+        "title": "titulo1",
+        "price": 10,
+        "thumbnail": "www.thum1.com",
+        "id": 1
+    },
+    {
+        "title": "titulo2",
+        "price": 20,
+        "thumbnail": "www.thum2.com",
+        "id": 2
+    },
+    {
+        "title": "titulo3",
+        "price": 30,
+        "thumbnail": "www.thum3.com",
+        "id": 3
+    }
+]

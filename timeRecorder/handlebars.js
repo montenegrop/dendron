@@ -16,16 +16,22 @@ app.set('views', './views')
 app.set('view engine', 'hbs')
 
 var trabajando = false
-var start = moment()
 var pausado = false
 var empezado = false
+var terminable = false
+var empezable = false
 
-console.log('empezar')
+const PORT = 8086
 
-app.get('', (req, res) => {
+app.get('/iniciable/casino', (req, res) => {
+    empezable = true
     trabajando = false
     const data = {
         trabajando,
+        pausado,
+        empezado,
+        terminable,
+        empezable,
     }
     return res.render('layouts/main', data)
 })
@@ -33,6 +39,7 @@ app.get('', (req, res) => {
 app.get('/empezar', (req, res) => {
     trabajando = true
     empezado = true
+    empezable = false
 
     var key = moment().format('DD MM YYYY')
 
@@ -41,8 +48,10 @@ app.get('/empezar', (req, res) => {
 
     const data = {
         trabajando,
-        empezado,
         pausado,
+        empezado,
+        terminable,
+        empezable,
     }
     return res.render('layouts/main', data)
 })
@@ -50,26 +59,30 @@ app.get('/empezar', (req, res) => {
 app.get('/pausar', (req, res) => {
     trabajando = false
     pausado = true
+    terminable = true
 
     // var ahora = moment().format('DD MM YYYY hh:mm:ss')
 
     const data = {
         trabajando,
-        empezado,
         pausado,
+        empezado,
+        terminable,
+        empezable,
     }
     return res.render('layouts/main', data)
 })
 
 app.get('/continuar', (req, res) => {
     trabajando = true
-    var date_time = new Date()
-    var ahora = moment().format('DD MM YYYY hh:mm:ss')
+    terminable = false
 
     const data = {
         trabajando,
         pausado,
         empezado,
+        terminable,
+        empezable,
     }
     return res.render('layouts/main', data)
 })
@@ -78,18 +91,18 @@ app.get('/terminar', (req, res) => {
     trabajando = false
     pausado = false
     empezado = false
-    var date_time = new Date()
-    var ahora = moment().format('DD MM YYYY hh:mm:ss')
+    terminable = false
+    empezable = false
 
     const data = {
         trabajando,
         pausado,
         empezado,
+        terminable,
+        empezable,
     }
     return res.render('layouts/main', data)
 })
-
-const PORT = 8080
 
 const server = app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`)

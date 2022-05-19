@@ -27,25 +27,25 @@ function terminar(e) {
 
   {{!-- <h2>trabajado: {{ ahora }} HH:MM:SS</h2> --}}
 
-  <button {{#if pausado}} disabled {{else if empezado}} disabled {{/if}} onclick="empezar()">
+  <button {{#unless empezable}} disabled {{/unless}} onclick="empezar()">
   Empezar
   </button>
 
   {{#if trabajando}}
 
-  <button onclick="pausar()">
+  <button {{#unless empezado}} disabled {{/unless}} onclick="pausar()">
   Pausar
   </button>
 
 {{else}}
 
-  <button onclick="continuar()">
+  <button {{#unless empezado}} disabled {{/unless}} onclick="continuar()">
   Continuar
   </button>
 
 {{/if}}
 
-  <button {{#if trabajando}} disabled {{/if}} onclick="terminar()">
+  <button {{#unless terminable}} disabled {{/unless}} onclick="terminar()">
   Terminar
   </button>
 

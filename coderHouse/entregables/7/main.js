@@ -120,14 +120,14 @@ db.products.find()
 db.messages.find()
 
 // Count
-db.products.countDocuments()
-db.messages.countDocuments()
+// db.products.countDocuments()s
+// db.messages.countDocuments()
 
 // CRUD
 
 // - Create
 db.products.insertOne({
-    title: 'Carne',
+    title: 'Mortadella',
     price: 3715,
     thumbnail: 'http://dummyimage.com/212x181.png/dddddd/000000',
 })
@@ -136,12 +136,12 @@ db.products.insertOne({
 db.products.find({ price: { $lt: 1000 } })
 db.products.find({ price: { $lte: 3000, $gte: 1000 } })
 db.products.find({ price: { $gt: 3000 } })
-db.products
-    .find()
-    .sort({ price: 1 })
-    .map(({ title }) => title)
-    .skip(2)
-    .limit(1)
+// db.products
+//     .find()
+//     .sort({ price: 1 })
+//     .map(({ title }) => title)
+//     .skip(2)
+//     .limit(1)
 
 // - Update
 db.products.updateMany({}, { $set: { stock: 100 } })
@@ -151,13 +151,13 @@ db.products.updateMany({ price: { $gt: 4000 } }, { $set: { stock: 0 } })
 db.products.deleteMany({ price: { $lt: 1000 } })
 
 // Create user with read-only access
-db.createUser({
-    user: 'pepe',
-    pwd: 'asd456',
-    roles: [
-        {
-            role: 'read',
-            db: 'ecommerce',
-        },
-    ],
-})
+// db.createUser({
+//     user: 'pepe',
+//     pwd: 'asd456',
+//     roles: [
+//         {
+//             role: 'read',
+//             db: 'ecommerce',
+//         },
+//     ],
+// })

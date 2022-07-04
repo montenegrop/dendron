@@ -120,7 +120,7 @@ db.products.find()
 db.messages.find()
 
 // Count
-// db.products.countDocuments()s
+// db.products.countDocuments()
 // db.messages.countDocuments()
 
 // CRUD

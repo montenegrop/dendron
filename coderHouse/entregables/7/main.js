@@ -119,7 +119,7 @@ db.products.find()
 
 db.messages.find()
 
-// db.collection.count() deprecated
+// Count
 db.products.countDocuments()
 db.messages.countDocuments()
 

@@ -120,8 +120,8 @@ db.products.find()
 db.messages.find()
 
 // Count
-db.products.countDocuments({})
-db.messages.countDocuments({})
+print("products count: ", db.products.countDocuments({}))
+print("messages count: ",db.messages.countDocuments({}))
 
 // CRUD
 
@@ -133,11 +133,10 @@ db.products.insertOne({
 })
 
 // - Read
-db.products.find({ price: { $lt: 1000 } })
-db.products.find({ price: { $lte: 3000, $gte: 1000 } })
-db.products.find({ price: { $gt: 3000 } })
-db.products.find().sort({ price: 1 }).skip(2).limit(1)
-// .map(({ title }) => title)
+print(db.products.find({ price: { $lt: 1000 } }).map(({title}) => title))
+print(db.products.find({ price: { $lte: 3000, $gte: 1000 } }).map(({title}) => title))
+print(db.products.find({ price: { $gt: 3000 } }).map(({title}) => title))
+print(db.products.find().sort({ price: 1 }).skip(2).limit(1).map(({title}) => title))
 
 // - Update
 db.products.updateMany({}, { $set: { stock: 100 } })
